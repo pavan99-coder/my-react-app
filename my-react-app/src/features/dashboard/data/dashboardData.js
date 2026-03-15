@@ -38,8 +38,24 @@ export const integrations = [
 ]
 
 export const KPI_METRICS = [
-  { label: 'Total Revenue', value: '$284,500', change: '+12.4%', positive: true,  icon: DollarSign,        accentColor: '#6366F1' },
-  { label: 'Total Traffic', value: '1.84M',    change: '+8.1%',  positive: true,  icon: MousePointerClick, accentColor: '#06B6D4' },
-  { label: 'Subscribers',   value: '42,310',   change: '+5.3%',  positive: true,  icon: Users,             accentColor: '#8B5CF6' },
-  { label: 'Churn Rate',    value: '2.4%',     change: '+0.3%',  positive: false, icon: AlertTriangle,     accentColor: '#F59E0B' },
+  {
+    label: 'Total Revenue', value: '$284,500', change: '+12.4%', positive: true,
+    icon: DollarSign, accentColor: '#6366F1',
+    sparkline: [{ v: 18 }, { v: 24 }, { v: 20 }, { v: 27 }, { v: 25 }, { v: 32 }, { v: 30 }, { v: 35 }],
+  },
+  {
+    label: 'Total Traffic', value: '1.84M', change: '+8.1%', positive: true,
+    icon: MousePointerClick, accentColor: '#06B6D4',
+    sparkline: [{ v: 40 }, { v: 38 }, { v: 45 }, { v: 42 }, { v: 50 }, { v: 48 }, { v: 55 }, { v: 58 }],
+  },
+  {
+    label: 'Subscribers', value: '42,310', change: '+5.3%', positive: true,
+    icon: Users, accentColor: '#8B5CF6',
+    sparkline: [{ v: 22 }, { v: 26 }, { v: 24 }, { v: 30 }, { v: 28 }, { v: 34 }, { v: 32 }, { v: 36 }],
+  },
+  {
+    label: 'Churn Rate', value: '2.4%', change: '+0.3%', positive: false,
+    icon: AlertTriangle, accentColor: '#F59E0B',
+    sparkline: [{ v: 12 }, { v: 10 }, { v: 14 }, { v: 11 }, { v: 15 }, { v: 13 }, { v: 16 }, { v: 17 }],
+  },
 ]

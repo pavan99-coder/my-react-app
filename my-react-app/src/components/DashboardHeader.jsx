@@ -1,4 +1,4 @@
-import { CalendarDays, Bell, ChevronDown } from 'lucide-react'
+import { CalendarDays, Bell, ChevronDown, Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -16,12 +16,17 @@ const DATE_RANGES = ['Last 7 days', 'Last 30 days', 'Last 90 days', 'This year']
  * @param {string}   dateRange    - Currently selected range
  * @param {Function} onDateChange - Called with new range string
  */
-export function DashboardHeader({ title, subtitle, dateRange, onDateChange }) {
+export function DashboardHeader({ title, subtitle, dateRange, onDateChange, onMenuToggle }) {
   return (
-    <header className="h-[72px] bg-card border-b border-border flex items-center justify-between px-7 sticky top-0 z-10">
-      <div className="flex flex-col gap-0.5">
+    <header className="h-[72px] bg-card border-b border-border flex items-center justify-between px-4 sm:px-7 sticky top-0 z-10">
+      <div className="flex items-center gap-3">
+        <Button variant="ghost" size="icon" className="h-9 w-9 lg:hidden" onClick={onMenuToggle}>
+          <Menu size={18} />
+        </Button>
+        <div className="flex flex-col gap-0.5">
         <h1 className="text-lg font-bold leading-tight">{title}</h1>
-        {subtitle && <p className="text-xs text-muted-foreground">{subtitle}</p>}
+        {subtitle && <p className="text-xs text-muted-foreground hidden sm:block">{subtitle}</p>}
+        </div>
       </div>
 
       <div className="flex items-center gap-2">
@@ -30,7 +35,7 @@ export function DashboardHeader({ title, subtitle, dateRange, onDateChange }) {
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="gap-2 font-medium text-sm h-9">
               <CalendarDays size={14} className="text-muted-foreground" />
-              {dateRange}
+              <span className="hidden sm:inline">{dateRange}</span>
               <ChevronDown size={13} className="text-muted-foreground" />
             </Button>
           </DropdownMenuTrigger>

@@ -21,7 +21,7 @@ export function SalesDistributionSection() {
         <AddIntegrationModal onAdd={handleAdd} onClose={() => setModalOpen(false)} />
       )}
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <ChartCard title="Sales Distribution" subtitle="Revenue by plan tier">
           <div className="relative flex justify-center">
             <ResponsiveContainer width="100%" height={210}>

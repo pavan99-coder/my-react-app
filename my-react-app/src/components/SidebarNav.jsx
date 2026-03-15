@@ -21,9 +21,12 @@ const NAV_ITEMS = [
  * @param {number}   activeIndex  - Index of the currently active nav item
  * @param {Function} onSelect     - Called with index when an item is clicked
  */
-export function SidebarNav({ activeIndex, onSelect }) {
+export function SidebarNav({ activeIndex, onSelect, open }) {
   return (
-    <aside className="w-[240px] min-h-screen bg-card border-r border-border flex flex-col sticky top-0 h-screen overflow-hidden shrink-0">
+    <aside className={`w-[240px] bg-card border-r border-border flex flex-col h-screen overflow-hidden shrink-0
+      fixed top-0 left-0 z-50 transition-transform duration-200
+      lg:sticky lg:translate-x-0
+      ${open ? 'translate-x-0' : '-translate-x-full'}`}>
       {/* Logo */}
       <div className="flex items-center gap-2.5 px-5 py-6 border-b border-border">
         <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: '#6366F1' }}>
