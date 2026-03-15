@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(del:*)",
+      "Bash(echo exit:$?)",
+      "Bash(git -C \"C:/Users/Lenovo/Desktop/react project\" remote -v)",
+      "Bash(tee /dev/stderr)",
+      "Bash(git -C \"C:/Users/Lenovo/Desktop/react project\" remote get-url origin)"
+    ]
+  }
+}
